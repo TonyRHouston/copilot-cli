@@ -1,3 +1,74 @@
+## 0.0.402 - 2026-02-03
+
+- ACP server supports agent and plan session modes
+- MCP configuration applies to ACP mode
+- Agent creation wizard styling improvements
+- Custom agents with unknown fields load with warnings instead of errors
+- Custom agents receive environment context when run as subagents
+- Plugins can provide hooks for session lifecycle events
+- Plugin update command works for direct plugins and handles Windows file locks
+- Stop MCP servers when uninstalling plugins
+
+## 0.0.401 - 2026-02-03
+
+- Support `.agents/skills` directory for auto-loading skills
+- Improve handling of chat history when switching between model families
+- MCP tools returning structuredContent now display correctly in CLI
+- Support Claude-style .mcp.json format without mcpServers wrapper
+- Inserting new line with shift+enter keybinding in VS Code integrated terminal
+- Large multi-line pastes work correctly
+- ACP terminal-auth passes correct arguments to login
+- Arrow and special keys work reliably when held down
+- Slash command ghost text appends correctly
+- Add `copilot login` subcommand and support ACP terminal-auth
+- Add agentStop and subagentStop hooks to control agent completion
+- CLI handles unknown keypresses gracefully
+- /diff displays accurate line numbers with dual column layout
+
+## 0.0.400 - 2026-01-30
+
+- Add MCP server instructions support
+- Timeline displays user responses to `ask_user` tool prompts with username
+- Ordered lists display with numbers instead of dashes
+- Add theme picker with `/theme` command and GitHub Dark/Light themes
+- Fix support for pasting large content on Windows Terminal
+- Better handle large results from grep and glob tools to avoid memory issues
+- CLI now sends DELETE requests to remove MCP servers when shutting down
+- Fix not being able to arrow key out of text inputs in select lists
+- ACP server supports changing models during a session
+- ACP server support permission flags: --yolo, --allow-all, etc. and permissions config
+- Show progress indicator in terminal tab when thinking
+- Remove bundled LSP servers (TypeScript, Python)
+- Improve compatibility with remote MCP servers that use OAuth
+- Markdown table headers display in bold
+- Add autopilot mode for autonomous task completion (experimental)
+- Add fuzzy search to model picker
+- Freeform text input in list pickers works correctly
+- Add `copilot plugin` subcommand for non-interactive plugin management
+- CLI is more responsive in sessions with many messages
+- Shell path detection more accurately handles spaces, quotes, and Windows switches
+- Diff mode file list uses carousel navigation, showing up to 5 files at a time
+- Holding backspace continues deleting text
+- Better support for UNIX keyboard bindings (Ctrl+A/E/W/U/K, Alt+arrows) and multiline content in various text inputs
+- Add `launch_messages` config for startup announcements
+- The Code Review tool handles large changesets by ignoring build artifacts and limiting to 100 files
+
+## 0.0.399 - 2026-01-29
+
+- Compaction messages show clearer command hints to view checkpoint summaries
+- Press Ctrl+X then / to run slash commands without losing your input
+- Improve `/diff` command with better visual indicators and scroll acceleration
+- Add `/allow-all` and `/yolo` commands to auto-approve all permissions during a session
+- Add Copilot option for agent creation wizard to generate name, description, and instructions based on initial agent description
+- Add LSP (Language Server Protocol) tool for code intelligence (requires experimental flag)
+- Sessions get AI-generated names from first message
+- Skills remain effective after conversation history is compacted
+- /usage now includes token consumption from sub-agents (e.g., the general-purpose agent)
+- Support `.claude/commands/` single-file commands as simpler alternative to skills
+- Skills load correctly on Windows
+- Add `/diff` command to review session changes
+- Undo/rewind to previous states with double-Esc
+
 ## 0.0.398 - 2026-01-28
 
 - Fix a regression that caused "Invalid session id" errors for agent shell calls
